@@ -1,0 +1,30 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016-04-14, 16:23:10
+    Author     : kaqq.pl
+*/
+.button {
+-fx-background-color:#b3b3b3 ;
+-fx-background-insets: 0, 0, 0,0;
+-fx-border-color: black;
+-fx-font-family: "Helvetica";
+-fx-text-fill: black;
+-fx-font-size: 30px;
+}
+.buttonright {
+-fx-background-color:#ff6600 ;
+-fx-background-insets: 0, 0, 0,0;
+-fx-border-color: black;
+-fx-font-family: "Helvetica";
+-fx-text-fill: black;
+-fx-font-size: 30px;
+}
+.label{
+    -fx-background-color: black;
+    color:white;
+    -fx-border-radius: 0;
+}
