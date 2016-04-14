@@ -27,4 +27,7 @@ and open the template in the editor.
     -fx-background-color: black;
     color:white;
     -fx-border-radius: 0;
+    -fx-text-fill: white;
+    -fx-font-size: 20pt;
+
 }
