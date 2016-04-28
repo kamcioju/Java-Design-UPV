@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="273.0" prefWidth="287.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab3.ex2.FXMLDocumentController">
+    <children>
+        <Button fx:id="convert" layoutX="72.0" layoutY="155.0" onAction="#Convert" text="Convert" />
+      <Button fx:id="clear" layoutX="144.0" layoutY="155.0" mnemonicParsing="false" onAction="#Clear" text="Clear" />
+      <Label layoutX="45.0" layoutY="87.0" text="Input" />
+      <Label layoutX="46.0" layoutY="116.0" text="Output" />
+      <Label layoutX="41.0" layoutY="53.0" text="Conversion rate:" />
+      <Label fx:id="c_rate" layoutX="130.0" layoutY="53.0" prefHeight="17.0" prefWidth="28.0" text="00" />
+      <Slider fx:id="rate_slider" layoutX="33.0" layoutY="22.0" max="2.0" prefHeight="14.0" prefWidth="223.0" showTickLabels="true" showTickMarks="true" />
+      <TextField fx:id="Input_val" layoutX="92.0" layoutY="83.0" />
+      <TextField fx:id="Output_val" layoutX="92.0" layoutY="112.0" />
+      <CheckBox layoutX="36.0" layoutY="232.0" onAction="#check_box_onclick" mnemonicParsing="false" text="Automatic Conversion" />
+      <Separator layoutX="24.0" layoutY="207.0" prefHeight="3.0" prefWidth="237.0" />
+    </children>
+</AnchorPane>

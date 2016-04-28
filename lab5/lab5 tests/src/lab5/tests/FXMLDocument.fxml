@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab5.tests.FXMLDocumentController">
+    <children>
+      <BorderPane prefHeight="200.0" prefWidth="320.0">
+         <top>
+            <VBox>
+               <children>
+                  <MenuBar>
+                    <menus>
+                      <Menu mnemonicParsing="false" text="%File">
+                        <items>
+                          <MenuItem onAction="#exitButtonAction" text="%Exit" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="%Launch">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#PerformAmazon" text="Amazon" />
+                              <MenuItem mnemonicParsing="false" onAction="#PerformBlogger" text="Blogger" />
+                              <MenuItem mnemonicParsing="false" onAction="#PerformEbay" text="Ebay" />
+                              <MenuItem mnemonicParsing="false" onAction="#PerformSocial" text="Facebook" />
+                              <MenuItem mnemonicParsing="false" onAction="#PerformSocial" text="Google+" />
+                           </items></Menu>
+                      <Menu mnemonicParsing="false" text="%Option">
+                        <items>
+                              <Menu mnemonicParsing="false" text="%BuyIn">
+                                <items>
+                                    <CheckMenuItem fx:id="AmazonSelected" mnemonicParsing="false" text="Amazon" />
+                                    <CheckMenuItem fx:id="EbaySelected" mnemonicParsing="false" text="Ebay" />
+                                </items>
+                              </Menu>
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+                  <ToolBar prefHeight="40.0" prefWidth="200.0">
+                    <items>
+                        <HBox>
+                           <children>
+                            <Button id="amazon" mnemonicParsing="false" onAction="#PerformAmazon">
+                                 <graphic>
+                                    <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@amazon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button id="blogger" mnemonicParsing="false" onAction="#PerformBlogger">
+                                 <graphic>
+                                    <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@blogger.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button id="ebay" mnemonicParsing="false" onAction="#PerformEbay">
+                                 <graphic>
+                                    <ImageView id="ebay" fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@ebay.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button id="Facebook" mnemonicParsing="false" onAction="#PerformSocial">
+                                 <graphic>
+                                    <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@facebook.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button id="Google+" mnemonicParsing="false" onAction="#PerformSocial">
+                                 <graphic>
+                                    <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@google.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                    </items>
+                  </ToolBar>
+               </children>
+            </VBox>
+         </top>
+         <bottom>
+            <Label fx:id="label" alignment="CENTER" BorderPane.alignment="CENTER_LEFT" />
+         </bottom>
+      </BorderPane>
+    </children>
+</AnchorPane>

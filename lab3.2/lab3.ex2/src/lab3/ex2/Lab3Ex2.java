@@ -3,22 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafxapplication5;
+package lab3.ex2;
 
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 /**
  *
  * @author kaqq
  */
-public class JavaFXApplication5 extends Application {
+public class Lab3Ex2 extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -27,14 +24,7 @@ public class JavaFXApplication5 extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
-        stage.setMinHeight(416);
-        stage.setMinWidth(268);
-        stage.initStyle(StageStyle.UTILITY);
-
-            stage.show();
-          
-        
-        
+        stage.show();
     }
 
     /**
@@ -42,8 +32,6 @@ public class JavaFXApplication5 extends Application {
      */
     public static void main(String[] args) {
         launch(args);
-       
     }
     
 }
-

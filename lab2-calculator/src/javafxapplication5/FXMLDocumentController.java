@@ -62,6 +62,7 @@ public class FXMLDocumentController implements Initializable {
         assert res != null : "fx:id=\"res\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
         assert dot != null : "fx:id=\"dot\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
         calc= new CalculatorLogic(res);
+      
     }
     
 }
