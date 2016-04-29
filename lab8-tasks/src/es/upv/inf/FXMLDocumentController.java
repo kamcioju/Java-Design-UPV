@@ -7,6 +7,7 @@ package es.upv.inf;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
@@ -25,14 +26,15 @@ import javafx.scene.layout.HBox;
  */
 public class FXMLDocumentController implements Initializable {
 
-    private static final int NUM_BUTTONS = 5;
+    public static final int NUM_BUTTONS = 5;
 
     @FXML
     private Label label;
     @FXML
     private HBox buttonContainer;
-
+    
     private long t0;
+    int winnerButton;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -43,31 +45,29 @@ public class FXMLDocumentController implements Initializable {
             b.setDisable(true);
             buttonContainer.getChildren().add(b);
         }
+        //stateGenerator.start();
         label.setText("");
+        for (Node b : buttonContainer.getChildren()) {
+            ButtonGenerator.state.add(b.disableProperty());
+        }
+              
+
     }
 
     @FXML
-    private void onStart(ActionEvent event) {
+    private void onStart(ActionEvent event) throws InterruptedException {
+        //stateGenerator.ResetLast();
+         Button btn= (Button) buttonContainer.getChildren().get(winnerButton);
+        ButtonGenerator stateGenerator = new ButtonGenerator(btn.disableProperty());
+       
+        stateGenerator.start();
         label.setText("Get ready...");
-
-        for (Node b : buttonContainer.getChildren()) {
-            b.setDisable(true);
-        }
-
-        double waitTime = Math.random() * 5 + 1.0;
-        label.getScene().setCursor(Cursor.WAIT);
-
-        try {
-            Thread.sleep((long) (waitTime * 1000));
-        } catch (InterruptedException e) {
-        }
-
-        label.getScene().setCursor(Cursor.DEFAULT);
+       // label.getScene().setCursor(Cursor.WAIT);
+        //label.getScene().setCursor(Cursor.DEFAULT);
         t0 = System.currentTimeMillis();
-        int winnerButton = (int) (Math.floor(Math.random() * NUM_BUTTONS));
-        buttonContainer.getChildren().get(winnerButton).setDisable(false);
         label.setText("Now!");
     }
+
 
     private void onStopTimer(ActionEvent event) {
         long t1 = System.currentTimeMillis();
@@ -84,7 +84,6 @@ public class FXMLDocumentController implements Initializable {
             msg = "You should try harder. ";
         }
         label.setText(msg + "You needed " + elapsed + " ms");
-
-        ((Node) event.getSource()).setDisable(true);
+       // stateGenerator.ResetLast();
     }
 }
